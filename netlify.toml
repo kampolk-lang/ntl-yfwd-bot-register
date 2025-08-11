@@ -2,6 +2,7 @@
   publish = "."
   functions = "netlify/functions"
 
+# --- ส่ง /api ไป Function ก่อน (ต้องมาก่อน fallback เสมอ) ---
 [[redirects]]
   from = "/api"
   to = "/.netlify/functions/gs-proxy"
@@ -14,6 +15,7 @@
   status = 200
   force = true
 
+# --- SPA fallback กัน 404 เส้นทางอื่น ---
 [[redirects]]
   from = "/*"
   to = "/index.html"
